@@ -40,6 +40,7 @@ public class JournalController {
 	@RequestMapping(value = "/view/{id}", method = RequestMethod.GET, produces = "application/pdf")
 	public ResponseEntity renderDocument(@AuthenticationPrincipal Principal principal, @PathVariable("id") Long id)
 			throws IOException {
+		//Mi super mejora de codigo :) 
 		Journal journal = journalRepository.findOne(id);
 		Category category = journal.getCategory();
 		CurrentUser activeUser = (CurrentUser) ((Authentication) principal).getPrincipal();
